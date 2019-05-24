@@ -1,7 +1,7 @@
 (ns leiningen.new.clojure-graalvm-aws-lambda
-  (:require [leiningen.new.templates :refer [renderer name-to-path ->files]]
-            [leiningen.core.main :as main]
-            [clojure.string :as s]))
+  (:require [clojure.string :as s]
+            [leiningen.new.templates :refer [renderer name-to-path ->files]]
+            [leiningen.core.main :as main]))
 
 (def render (renderer "clojure-graalvm-aws-lambda"))
 
