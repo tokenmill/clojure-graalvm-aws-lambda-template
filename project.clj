@@ -1,0 +1,8 @@
+(defproject clojure-graalvm-aws-lambda/lein-template "0.3.0"
+  :description "Template for AWS Lambda with Clojure tools-deps, GraalVM, Docker, and Gitlab CI"
+  :url "https://gitlab.com/Jocas/clojure-graalvm-aws-lambda-template"
+  :license {:name "Apache License Version 2.0, January 2004"
+            :url "http://www.apache.org/licenses/"}
+  :deploy-repositories [["releases"  {:sign-releases false :url "https://clojars.org"}]
+                        ["snapshots" {:sign-releases false :url "https://clojars.org"}]]
+  :eval-in-leiningen true)

@@ -12,4 +12,7 @@ pom.xml.asc
 .lein-failures
 .nrepl-port
 .cpcache/
+.idea/
+**/*.iml
+server
 .env

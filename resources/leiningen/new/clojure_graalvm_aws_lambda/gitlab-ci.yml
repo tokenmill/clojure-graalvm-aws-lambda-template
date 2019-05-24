@@ -1,0 +1,22 @@
+stages:
+  - deploy
+
+deploy-lambda:
+  stage: deploy
+  image: docker:stable
+  when: manual
+  variables:
+    DOCKER_HOST: tcp://docker:2375/
+  services:
+    - docker:dind
+  script:
+    - >
+      docker build
+      --target deployer
+      --build-arg AWS_DEFAULT_REGION=$MY_AWS_DEFAULT_REGION
+      --build-arg AWS_ACCESS_KEY_ID=$MY_AWS_ACCESS_KEY_ID
+      --build-arg AWS_SECRET_ACCESS_KEY=$MY_AWS_SECRET_ACCESS_KEY
+      --build-arg S3_BUCKET=$MY_S3_BUCKET
+      --build-arg S3_FOLDER=$MY_S3_FOLDER
+      --build-arg STACK_NAME="lambda-custom-runtime-{{lambda-name}}"
+      -t lambda-deployer .

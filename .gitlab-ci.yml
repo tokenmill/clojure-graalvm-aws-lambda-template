@@ -1,0 +1,43 @@
+stages:
+  - build
+  - test
+  - publish-template
+
+build-template:
+  stage: build
+  image: clojure:openjdk-8-lein-alpine
+  when: always
+  script:
+    - lein new clojure-graalvm-aws-lambda my-lambda
+  artifacts:
+    paths:
+      - my-lambda/
+    expire_in: 1 week
+
+test-build-lambda-zip:
+  stage: test
+  image: docker:stable
+  when: manual
+  variables:
+    DOCKER_HOST: tcp://docker:2375/
+  services:
+    - docker:dind
+  script:
+    - cd my-lambda
+    - docker build --target archiver -t lambda-runtime-archiver .
+    - docker rm build || true
+    - docker create --name build lambda-runtime-archiver
+    - docker cp build:/usr/src/app/function.zip function.zip
+
+publish:
+  stage: publish-template
+  image: clojure:openjdk-8-lein-alpine
+  when: manual
+  only:
+    - master
+    - tags
+  script:
+    - cp $LEIN_PROFILES_CLJ ~/.lein/profiles.clj
+    - cp $GPG_GEN_KEY_SCRIPT gen-key-script
+    - gpg --batch --gen-key gen-key-script
+    - lein deploy clojars
