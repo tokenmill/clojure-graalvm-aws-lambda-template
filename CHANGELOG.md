@@ -4,7 +4,7 @@ follows the conventions of [keepachangelog.com](http://keepachangelog.com/).
 
 ## 0.3.1 - 2019-05-27
 ### Changed
-- Project URL
+- Project URL to Github
 
 ## 0.3.0 - 2019-05-24
 ### Changed
