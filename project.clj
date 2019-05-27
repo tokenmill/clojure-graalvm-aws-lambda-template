@@ -5,4 +5,6 @@
             :url "http://www.apache.org/licenses/"}
   :deploy-repositories [["releases"  {:sign-releases false :url "https://clojars.org"}]
                         ["snapshots" {:sign-releases false :url "https://clojars.org"}]]
+  :scm {:name "git"
+        :url "https://github.com/tokenmill/clojure-graalvm-aws-lambda-template"}
   :eval-in-leiningen true)
