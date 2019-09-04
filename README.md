@@ -1,3 +1,7 @@
+<a href="http://www.tokenmill.lt">
+      <img src=".github/tokenmill-logo.svg" width="125" height="125" align="right" />
+</a>
+
 # clojure-graalvm-aws-lambda-template
 
 [![Clojars Project](https://img.shields.io/clojars/v/clojure-graalvm-aws-lambda/lein-template.svg)](https://clojars.org/clojure-graalvm-aws-lambda/lein-template)
@@ -55,4 +59,6 @@ Lambda is ready to be used. Go to your AWS Console to work with the new stack na
 
 ## License
 
-This project is licensed under the Apache 2.0 License - see the LICENSE file for details
+Copyright &copy; 2019 [TokenMill UAB](http://www.tokenmill.lt).
+
+Distributed under the The Apache License, Version 2.0.
