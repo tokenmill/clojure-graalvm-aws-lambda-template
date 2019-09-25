@@ -7,7 +7,7 @@
 [![Clojars Project](https://img.shields.io/clojars/v/clojure-graalvm-aws-lambda/lein-template.svg)](https://clojars.org/clojure-graalvm-aws-lambda/lein-template)
 [![pipeline status](https://gitlab.com/Jocas/clojure-graalvm-aws-lambda-template/badges/master/pipeline.svg)](https://gitlab.com/Jocas/clojure-graalvm-aws-lambda-template/commits/master)
 
-A Leiningen template for AWS Lambda custom runtime with GraalVM compiled Clojure project.
+Leiningen template for AWS Lambda custom runtime with GraalVM `native-image` compiled Clojure projects.
 
 Published in [Clojars](https://clojars.org/clojure-graalvm-aws-lambda/lein-template)
 
