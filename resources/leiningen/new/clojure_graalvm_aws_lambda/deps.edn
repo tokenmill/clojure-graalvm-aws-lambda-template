@@ -5,8 +5,7 @@
  :mvn/repos {"central" {:url "https://repo1.maven.org/maven2/"}
              "clojars" {:url "https://repo.clojars.org/"}}
  :aliases   {:native-image
-             {:extra-deps {luchiniatwork/cambada {:git/url "https://github.com/xfthhxk/cambada"
-                                                  :sha     "8fdc7d29a41620ad3e9e6210fd7140f3a4c7936b"}}
+             {:extra-deps {luchiniatwork/cambada {:mvn/version "1.0.2"}}  
               :main-opts  ["-m" "cambada.native-image"
                            "-m" "lambda.core"
                            "-a" "lambda.core"
